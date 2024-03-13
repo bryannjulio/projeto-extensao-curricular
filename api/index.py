@@ -4,7 +4,7 @@ import psycopg2
 import os
 
 app = Flask(__name__)
-app.secret_key = 'admin'
+
 
 # Configurações do banco de dados
 def get_db_connection():
