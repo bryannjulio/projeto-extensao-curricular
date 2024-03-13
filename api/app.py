@@ -1,15 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
-
+from flask import Flask, Blueprint, render_template, request, redirect, url_for, flash, session
 import psycopg2
-import os
 
-app = Flask(__name__)
 
+
+main = Blueprint('main', __name__)
 
 # Configurações do banco de dados
 def get_db_connection():
-    return psycopg2.connect(
-       os.environ.get('CONNECT_DB')
+    return psycopg2.connect('postgres://default:uiHfXp26DIZk@ep-polished-lake-a41n36g0.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require'
     )
 
 # Função para verificar as credenciais do usuário
@@ -30,11 +28,11 @@ def validar_credenciais(email, senha):
     else:
         return False
 
-@app.route('/')
+@main.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@main.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -49,13 +47,13 @@ def login():
 
     return render_template('login.html')
 
-@app.route('/logout')
+@main.route('/logout')
 def logout():
     session.pop('logged_in', None)
     flash('Logout bem sucedido!', 'success')
     return redirect(url_for('home'))
 
-@app.route('/dashboard')
+@main.route('/dashboard')
 def dashboard():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
@@ -63,6 +61,3 @@ def dashboard():
 
 
 
-if __name__ == '__main__':
-    app.secret_key = 'admin'
-    # app.run(debug=True)
