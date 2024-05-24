@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-
 import psycopg2
 import os
 
@@ -22,7 +21,6 @@ def validar_credenciais(email, senha):
     cursor.close()
     conn.close()
     if usuario:
-         # Armazenar dados do usuário na sessão
         session['id'] = usuario[0]
         session['nome'] = usuario[1]
         session['email'] = usuario[2]
@@ -32,7 +30,7 @@ def validar_credenciais(email, senha):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('landing_page.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -61,7 +59,41 @@ def dashboard():
         return redirect(url_for('login'))
     return render_template('dashboard.html')
 
+@app.route('/doacao', methods=['POST'])
+def doacao():
+    nome_do_doador = request.form['nome']
+    email_do_doador = request.form['email']
+    valor = request.form['valor']
+    mensagem = request.form['mensagem']
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    query = "INSERT INTO doacoes (nome_do_doador, email_do_doador, valor, mensagem) VALUES (%s, %s, %s, %s)"
+    cursor.execute(query, (nome_do_doador, email_do_doador, valor, mensagem))
+    conn.commit()
+    cursor.close()
+    conn.close()
+    
+    flash('Doação realizada com sucesso!', 'success')
+    return redirect(url_for('home'))
 
+@app.route('/cadastro_voluntario', methods=['POST'])
+def cadastro_voluntario():
+    nome = request.form['nome']
+    email = request.form['email']
+    telefone = request.form['telefone']
+    habilidades = request.form['habilidades']
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    query = "INSERT INTO voluntarios (nome, email, telefone, habilidades) VALUES (%s, %s, %s, %s)"
+    cursor.execute(query, (nome, email, telefone, habilidades))
+    conn.commit()
+    cursor.close()
+    conn.close()
+    
+    flash('Cadastro de voluntário realizado com sucesso!', 'success')
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.secret_key = 'admin'
