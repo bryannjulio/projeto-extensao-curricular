@@ -11,9 +11,9 @@
         <nav class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl animate-fade-up animate-duration-[2000ms]">Instituição de Caridade</h1>
             <ul class="flex space-x-4">
-                <li><a href="#doacao" class="hover:underline animate-fade-up animate-duration-[2000ms]">Faça uma Doação</a></li>
-                <li><a href="#voluntario" class="hover:underline">Seja um Voluntário</a></li>
-                <li><a href="#login" class="hover:underline">Área Restrita</a></li>
+                <li><a href="#doacao" class="menu-link hover:underline animate-fade-up animate-duration-[2000ms]">Faça uma Doação</a></li>
+                <li><a href="#voluntario" class="menu-link hover:underline">Seja um Voluntário</a></li>
+                <li><a href="#login" class="menu-link hover:underline">Área Restrita</a></li>
             </ul>
         </nav>
     </header>
@@ -93,5 +93,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Adiciona um evento de clique a todos os itens do menu
+        document.querySelectorAll('.menu-link').forEach(item => {
+            item.addEventListener('click', scrollToSection);
+        });
+
+        // Função para rolar suavemente até a seção correspondente ao item do menu clicado
+        function scrollToSection(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+            const targetId = this.getAttribute('href'); // Obtém o ID da seção de destino
+            const targetSection = document.querySelector(targetId); // Obtém a seção de destino
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a seção
+            }
+        }
+    </script>
 </body>
 </html>
