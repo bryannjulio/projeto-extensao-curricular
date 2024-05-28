@@ -21,10 +21,24 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 ```
 python --version
 pip --version
-
 ```
 - Sistema Operacional Linux ou Windows
 
+## ☕ Criando variavel de ambiente [OPCIONAL]:
+
+Crie uma variavel de ambiente:
+
+No Windows:
+```
+python -m venv venv
+venv\Scripts\activate
+```
+
+No Linux:
+```
+python3 -m venv venv
+source venv/bin/activate
+```
 
 ## 🚀 Instalando <projeto_extensao_curricular>
 
