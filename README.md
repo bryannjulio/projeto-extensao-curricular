@@ -6,12 +6,22 @@
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+> Front:
+- [ ] Trocar paleta de cores do projeto
+- [ ] Formulario de cadastro de voluntarios na pagina Home
+- [ ] Formulario de doação[Home]
+- [ ] Adicionar campo de pix cnpj e QRCODE (ficticio) [Home]
+- [ ] Adicionar campo API PAYPAL [Home]
+- [ ] remover demais páginas que não são home, dashboard do usuário, e login
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+
+
+> Back:
+- [ ] Login
+- [ ] Formulario de cadastro de voluntarios
+- [ ] Formulario de doação
+- [ ] criar blueprint de rotas
+      
 
 ## 💻 Pré-requisitos
 
@@ -40,9 +50,9 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-## 🚀 Instalando <projeto_extensao_curricular>
+## 🚀 Instalando projeto_extensao_curricular
 
-Para instalar o <projeto_extensao_curricular>, siga estas etapas:
+Para instalar o projeto_extensao_curricular, siga estas etapas:
 
 Instale as dependencias:
 
