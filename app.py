@@ -2,10 +2,11 @@ from flask import Flask, render_template
 from jinja2 import TemplateNotFound
 
 app = Flask(__name__)
-
+filipe = 0
 @app.route('/')
 def home():
     return render_template('/home/index.html')
+
 
 
 
