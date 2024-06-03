@@ -17321,9 +17321,7 @@ pre[class*="language-"] {
   transition: background-color .2s linear, opacity .2s linear;
   -webkit-transition: background-color .2s linear, opacity .2s linear;
   height: 15px;
-  /* there must be 'bottom' or 'top' for ps__rail-x */
   bottom: 0px;
-  /* please don't change 'position' */
   position: absolute; }
 
 .ps__rail-y {
