@@ -22,7 +22,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #e91e63;
+  --bs-primary: #000000;
   --bs-secondary: #7b809a;
   --bs-success: #4CAF50;
   --bs-info: #1A73E8;
@@ -190,10 +190,10 @@ sup {
   top: -.5em; }
 
 a {
-  color: #e91e63;
+  color: #000000;
   text-decoration: none; }
   a:hover {
-    color: #e91e63;
+    color: #080808;
     text-decoration: none; }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -13001,7 +13001,7 @@ textarea.form-control-lg {
   .card.card-background.card-background-mask-primary:before {
     background: rgba(0, 0, 0, 0.2); }
   .card.card-background.card-background-mask-primary:after {
-    background-image: linear-gradient(195deg, #EC407A 0%, #D81B60 100%);
+    background-image: linear-gradient(195deg, #1E90FF 0%, #1E90FF 100%);
     opacity: .85; }
   .card.card-background.card-background-mask-secondary:before {
     background: rgba(0, 0, 0, 0.2); }
@@ -13063,7 +13063,7 @@ textarea.form-control-lg {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       position: absolute;
-      background-color: #fff;
+      background-color: #4B0082;
       border-radius: 0.5rem;
       top: 0;
       left: 0;
@@ -13096,7 +13096,7 @@ textarea.form-control-lg {
         top: 0;
         content: "";
         border-radius: 0.5rem;
-        background-image: linear-gradient(195deg, #EC407A, #D81B60);
+        background-image: linear-gradient(195deg, #003366, #BEBD72);
         opacity: .85; }
     .rotating-card-container .card .front {
       z-index: 2;
@@ -16079,7 +16079,12 @@ p {
   position: relative;
   z-index: 1; }
   .text-gradient.text-primary {
-    background-image: linear-gradient(195deg, #EC407A, #D81B60); }
+    background-image: linear-gradient(195deg, #1E90FF, #4682B4, #6A5ACD)
+
+
+
+
+    ; }
   .text-gradient.text-info {
     background-image: linear-gradient(195deg, #49a3f1, #1A73E8); }
   .text-gradient.text-success {
