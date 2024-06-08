@@ -8,9 +8,9 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/static/assets/img/favicon.png">
 
-  <title>
-    Flask Material Kit 2 - Presentation | AppSeed
-  </title>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -113,14 +113,14 @@
                 <div class="info">
                   <i class="material-icons text-gradient text-primary text-3xl">attach_money</i>
                   <h5 class="font-weight-bolder mt-3">Doação via PIX</h5>
-                  <p class="pe-5">Facilite sua doação! Agora você pode contribuir de forma rápida e segura através do PIX. Sua doação é essencial para apoiar nossos projetos e causas. Faça sua contribuição agora e seja parte da mudança que queremos ver!.</p>
+                  <p class="lead" style="color: rgba(51, 51, 51, 0.9);">Facilite sua doação! Agora você pode contribuir de forma rápida e segura através do PIX. Sua doação é essencial para apoiar nossos projetos e causas. Faça sua contribuição agora e seja parte da mudança que queremos ver!.</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info">
                   <i class="material-icons text-gradient text-primary text-3xl">local_hospital</i>
                   <h5 class="font-weight-bolder mt-3">Doação de Sangue </h5>
-                  <p class="pe-3">Doe sangue, doe vida! Sua doação pode salvar até três vidas. Ajude-nos a manter os estoques de sangue em níveis seguros. Junte-se a nós hoje e faça a diferença!</p>
+                  <p class="lead" style="color: rgba(51, 51, 51, 0.9);">Doe sangue, doe vida! Sua doação pode salvar até três vidas. Ajude-nos a manter os estoques de sangue em níveis seguros. Junte-se a nós hoje e faça a diferença!</p>
                 </div>
               </div>
             </div>
@@ -128,13 +128,13 @@
               <div class="col-md-6 mt-3">
                 <i class="material-icons text-gradient text-primary text-3xl">credit_card</i>
                 <h5 class="font-weight-bolder mt-3">Doação Financeira</h5>
-                <p class="pe-5">Seja um agente de mudança! Sua doação financeira é um ato de generosidade que pode fazer toda a diferença na vida daqueles que enfrentam dificuldades.</p>
+                <p class="lead" style="color: rgba(51, 51, 51, 0.9);">Seja um agente de mudança! Sua doação financeira é um ato de generosidade que pode fazer toda a diferença na vida daqueles que enfrentam dificuldades.</p>
               </div>
               <div class="col-md-6 mt-3">
                 <div class="info">
-                  <i class="material-icons text-gradient text-primary text-3xl">devices</i>
-                  <h5 class="font-weight-bolder mt-3">Fully Responsive</h5>
-                  <p class="pe-3">Regardless of the screen size, the website content will naturally fit the given resolution.</p>
+                  <i class="material-icons text-gradient text-primary text-3xl">redeem</i>
+                  <h5 class="font-weight-bolder mt-3">Doação de Agasalhos</h5>
+                  <p class="lead" style="color: rgba(51, 51, 51, 0.9);">Ajude-nos a aquecer corações neste inverno. Faça sua doação de agasalhos e espalhe calor para quem mais precisa. Juntos, podemos fazer a diferença.</p>
                 </div>
               </div>
             </div>
@@ -142,31 +142,70 @@
         </div>
       </div>
     </section>
-    <section class="my-5 py-5">
+    <section class=" ">
       <div class="container">
         <div class="row">
-          <div class="row justify-content-center text-center my-sm-5">
-            <div class="col-lg-6">
-              <span class="badge bg-primary mb-3">Infinite combinations</span>
-              <h2 class="text-dark mb-0">Huge collection of sections</h2>
-              <p class="lead">We have created multiple options for you to put together and customise into pixel perfect pages. </p>
+          <div class="row justify-content-center text-center my-sm-5" >
+            <div class="col-lg-6" >
+
+              <h2 class="text-dark mb-0">Brasil: Segunda Maior Taxa de Pobreza do G20, Revela IBGE</h2>
+              <p class="lead" style="color: rgba(30, 30, 30, 0.9);">
+                Em 2021, o Brasil apresentou uma taxa de pobreza de 5,9% da população, a segunda maior entre os países do G20. Esse percentual fica atrás apenas da Índia, que registrou uma taxa de 12,9%. Esses dados foram divulgados em um relatório do IBGE (Instituto Brasileiro de Geografia e Estatística).
+            </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="row text-center my-sm-5 mt-5">
-            <div class="col-lg-6 mx-auto">
-              <span class="badge bg-primary mb-3">Boost creativity</span>
-              <h2 class="">With our coded pages</h2>
-              <p class="lead">The easiest way to get started is to use one of our <br /> pre-built example pages. </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div style="max-width: 700px; margin-left: 23rem; ">
+      <canvas id="myChart"></canvas>
+    </div>
+    
+    <script>
+  const data = {
+  labels: ['Brasil', 'Índia', 'Indonésia',],
+  datasets: [{
+    label: 'Porcentagem de',
+    data: [5.9, 12.9, 2.5,],
+    backgroundColor: [
+      'RGBA(0, 0, 139, 0.9)',
+      'RGBA(173, 216, 230, 1)',
+      'RGBA(139, 69, 19, 0.6)',
+    ],
+    borderColor: '#fff',
+    borderWidth: 2
+  }]
+};  
+      const options = {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Professional Pie Chart Example',
+            font: {
+              size: 24,
+              weight: 'bold'
+            },
+            padding: 20
+          }
+        },
+        aspectRatio: 1,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 10,
+              boxWidth: 20
+            }
+          }
+        }
+      };
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: options
+      });
+    </script>
       <div class="container mt-5">
         <div class="row">
           <div class="col-md-8">
@@ -174,10 +213,10 @@
               <div class="col-md-6">
                 <a href="/about-us.html">
                   <div class="card move-on-hover">
-                    <img class="w-100" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/assets/img/about-us.jpg" alt="aboutus">
+                    <img class="w-100" src="https://deaco.com.br/wp-content/uploads/2022/06/doe-sangue-mix.png" >
                   </div>
                   <div class="mt-2 ms-2">
-                    <h6 class="mb-0">About Us Page</h6>
+                    <h6 class="mb-0">Doação de Sangue</Data></h6>
                   </div>
                 </a>
               </div>
@@ -215,8 +254,9 @@
           </div>
           <div class="col-md-3 mx-auto mt-md-0 mt-5">
             <div class="position-sticky" style="top:100px !important">
-              <h4 class="">Presentation Pages for Company, Sign In Page, Author and Contact</h4>
-              <h6 class="text-secondary font-weight-normal">These is just a small selection of the multiple possibitilies you have. Focus on the business, not on the design.</h6>
+              <h4 class="">Você viu o gráfico, certo ?</h4>
+              <h6 class="text-secondary font-weight-normal">Este gráfico ilustra a porcentagem de pobreza no Brasil, uma realidade que afeta milhões de pessoas em nosso país. Ao refletir sobre esses números, é importante lembrar que por trás de cada estatística há uma pessoa, uma família lutando para sobreviver e prosperar </h6>
+              <h6>Junte-se a nós nesta jornada de solidariedade e compaixão. Sua generosidade pode ser a luz no fim do túnel para aqueles que mais precisam.</h6>
             </div>
           </div>
         </div>
