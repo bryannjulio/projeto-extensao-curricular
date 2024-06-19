@@ -3,14 +3,11 @@
 @import "./bootstrap/utilities";
 
 $utilities: (
-  // scss-docs-start utils-vertical-align
   "align": (
     property: vertical-align,
     class: align,
     values: baseline top middle bottom text-bottom text-top
   ),
-  // scss-docs-end utils-vertical-align
-  // scss-docs-start utils-float
   "float": (
     responsive: true,
     property: float,
@@ -20,28 +17,21 @@ $utilities: (
       none: none,
     )
   ),
-  // scss-docs-end utils-float
-  // scss-docs-start utils-overflow
+
   "overflow": (
     property: overflow,
     values: auto hidden visible scroll,
   ),
-  // scss-docs-end utils-overflow
-  // scss-docs-start utils-overflow-x
   "overflow-x": (
     property: overflow-x,
     class: overflow-x,
     values: auto hidden visible scroll,
   ),
-  // scss-docs-end utils-overflow-x
-  // scss-docs-start utils-overflow-y
   "overflow-y": (
     property: overflow-y,
     class: overflow-y,
     values: auto hidden visible scroll,
   ),
-  // scss-docs-end utils-overflow-y
-  // scss-docs-start utils-display
   "display": (
     responsive: true,
     print: true,
@@ -49,8 +39,6 @@ $utilities: (
     class: d,
     values: inline inline-block block grid table table-row table-cell flex inline-flex none
   ),
-  // scss-docs-end utils-display
-  // scss-docs-start utils-shadow
   "shadow": (
     property: box-shadow,
     class: shadow,
@@ -62,7 +50,6 @@ $utilities: (
       none: none,
     )
   ),
-  // scss-docs-start utils-colored-shadow
   "colored-shadow": (
     property: box-shadow,
     class: shadow,
@@ -77,8 +64,6 @@ $utilities: (
       light: $box-shadow-light,
     )
   ),
-  // scss-docs-end utils-colored-shadow
-  // scss-docs-start utils-position
   "position": (
     property: position,
     values: static relative absolute fixed sticky
@@ -110,7 +95,6 @@ $utilities: (
       y: translateY(-50%),
     )
   ),
-  //Scale
   "transform": (
     property: transform,
     class: transform-scale,
@@ -124,8 +108,6 @@ $utilities: (
       10: scale(1),
     )
   ),
-  // scss-docs-end utils-position
-  // scss-docs-start utils-borders
   "border": (
     property: border,
     values: (
@@ -177,9 +159,6 @@ $utilities: (
     class: border,
     values: $border-widths
   ),
-  // scss-docs-end utils-borders
-  // Sizing utilities
-  // scss-docs-start utils-sizing
   "width": (
     property: width,
     responsive: true,
@@ -241,9 +220,6 @@ $utilities: (
       100: 100vh
     )
   ),
-  // scss-docs-end utils-sizing
-  // Flex utilities
-  // scss-docs-start utils-flex
   "flex": (
     responsive: true,
     property: flex,
@@ -346,9 +322,6 @@ $utilities: (
       last: 6,
     ),
   ),
-  // scss-docs-end utils-flex
-  // Margin utilities
-  // scss-docs-start utils-spacing
   "margin": (
     responsive: true,
     property: margin,
@@ -391,7 +364,6 @@ $utilities: (
     class: ms,
     values: map-merge($spacers, (auto: auto))
   ),
-  // Negative margin utilities
   "negative-margin": (
     responsive: true,
     property: margin,
@@ -434,7 +406,6 @@ $utilities: (
     class: ms,
     values: $negative-spacers
   ),
-  // Padding utilities
   "padding": (
     responsive: true,
     property: padding,
@@ -477,9 +448,6 @@ $utilities: (
     class: ps,
     values: $spacers
   ),
-  // scss-docs-end utils-spacing
-  // Text
-  // scss-docs-start utils-text
   "font-family": (
     property: font-family,
     class: font,
@@ -550,8 +518,6 @@ $utilities: (
     values: (break: break-word),
     rtl: false
   ),
-  // scss-docs-end utils-text
-  // scss-docs-start utils-color
   "color": (
     property: color,
     class: text,
@@ -568,8 +534,6 @@ $utilities: (
       )
     )
   ),
-  // scss-docs-end utils-color
-  // scss-docs-start utils-bg-color
   "background-color": (
     property: background-color,
     class: bg,
@@ -591,13 +555,11 @@ $utilities: (
       )
     )
   ),
-  // scss-docs-end utils-bg-color
   "gradient": (
     property: background-image,
     class: bg,
     values: (gradient: var(--#{$variable-prefix}gradient))
   ),
-  // scss-docs-start utils-interaction
   "user-select": (
     property: user-select,
     values: all auto none
@@ -607,8 +569,6 @@ $utilities: (
     class: pe,
     values: none auto,
   ),
-  // scss-docs-end utils-interaction
-  // scss-docs-start utils-border-radius
   "rounded": (
     property: border-radius,
     class: rounded,
@@ -642,8 +602,6 @@ $utilities: (
     class: rounded-start,
     values: (null: $border-radius)
   ),
-  // scss-docs-end utils-border-radius
-  // scss-docs-start utils-visibility
   "visibility": (
     property: visibility,
     class: null,
@@ -652,7 +610,6 @@ $utilities: (
       invisible: hidden,
     )
   ),
-  // Opacity utilities
   "opacity": (
     property: opacity,
     values: (
@@ -669,7 +626,6 @@ $utilities: (
       10: 1
     ),
   ),
-  // Z-index utilities
   "z-index": (
     property: z-index,
     values: (
@@ -679,7 +635,6 @@ $utilities: (
       3: 3
     ),
   ),
-  // Letter spacing utilities
   "letter-spacing": (
     property: letter-spacing,
     values: (
@@ -690,7 +645,6 @@ $utilities: (
       5: 5px
     ),
   ),
-  // Border radius utilities
   "border-top-left-radius": (
     property: border-top-left-radius,
     class: border-radius-top-start,
@@ -755,7 +709,6 @@ $utilities: (
       pill: $border-radius-pill
     )
   ),
-  // Max Height Values
  "max-height-px": (
    property: max-height,
    class: max-height,
@@ -771,7 +724,6 @@ $utilities: (
     600: $max-height-600
    )
  ),
-  // Max Height Values vh
  "max-height-vh": (
    property: max-height,
    class: max-height-vh,
@@ -788,7 +740,6 @@ $utilities: (
     100: $max-height-vh-100,
    )
  ),
- // Min Height Values
   "min-height-px": (
     property: min-height,
     class: min-height,
@@ -804,7 +755,6 @@ $utilities: (
      600: $min-height-600
     )
   ),
-  // Height Values
   "height-px": (
     property: height,
     class: height,
@@ -817,7 +767,6 @@ $utilities: (
      600: $height-600
     )
   ),
-  // Max Width Values
    "max-width-px": (
      property: max-width,
      class: max-width,
