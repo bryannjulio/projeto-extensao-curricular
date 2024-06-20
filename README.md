@@ -7,9 +7,9 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 > Front:
-- [ ] Trocar paleta de cores do projeto
-- [ ] Formulario de cadastro de voluntarios na pagina Home
-- [ ] Formulario de doação[Home]
+- [x] Definir paleta de cores do projeto
+- [x] Página de cadastro de voluntarios na pagina Home
+- [ ] Página de doação[Home]
 - [ ] Adicionar campo de pix cnpj e QRCODE (ficticio) [Home]
 - [ ] Adicionar campo API PAYPAL [Home]
 - [ ] remover demais páginas que não são home, dashboard do usuário, e login
