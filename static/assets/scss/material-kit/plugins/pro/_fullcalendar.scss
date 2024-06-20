@@ -1,14 +1,6 @@
-/*!
-FullCalendar v5.6.0
-Docs & License: https://fullcalendar.io/
-(c) 2020 Adam Shaw
-*/
-/* classes attached to <body> */
-
-/* classes attached to <body> */
 
 .fc-not-allowed,
-.fc-not-allowed .fc-event { /* override events' custom cursors */
+.fc-not-allowed .fc-event { 
   cursor: not-allowed;
 }
 
@@ -21,7 +13,6 @@ Docs & License: https://fullcalendar.io/
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .fc {
-  /* layout of immediate children */
   display: flex;
   flex-direction: column;
 
@@ -36,7 +27,7 @@ Docs & License: https://fullcalendar.io/
 .fc table {
     border-collapse: collapse;
     border-spacing: 0;
-    font-size: 1em; /* normalize cross-browser */
+    font-size: 1em;
   }
 .fc th {
     text-align: center;
@@ -65,9 +56,6 @@ Docs & License: https://fullcalendar.io/
     border: 1px solid #ddd;
     border: 1px solid var(--fc-border-color, #ddd);
   }
-/* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
-/* inner-wrappers are responsible for being absolute */
-/* TODO: best place for this? */
 .fc-liquid-hack td,
   .fc-liquid-hack th {
     position: relative;
@@ -81,7 +69,6 @@ Docs & License: https://fullcalendar.io/
 }
 
 .fc-icon {
-  /* added for fc */
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -91,7 +78,6 @@ Docs & License: https://fullcalendar.io/
       -ms-user-select: none;
           user-select: none;
 
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'fcicons' !important;
   speak: none;
   font-style: normal;
@@ -100,7 +86,6 @@ Docs & License: https://fullcalendar.io/
   text-transform: none;
   line-height: 1;
 
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -132,15 +117,8 @@ Docs & License: https://fullcalendar.io/
 .fc-icon-x:before {
   content: "\e906";
 }
-/*
-Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
-
-These styles only apply when the standard-theme is activated.
-When it's NOT activated, the fc-button classes won't even be in the DOM.
-*/
 .fc {
 
-  /* reset */
 
 }
 .fc .fc-button {
@@ -168,7 +146,6 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc {
 
-  /* theme */
 
 }
 .fc .fc-button {
@@ -199,7 +176,6 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc {
 
-  /* "primary" coloring */
 
 }
 .fc .fc-button-primary {
@@ -218,13 +194,13 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: #1a252f;
     border-color: var(--fc-button-hover-border-color, #1a252f);
   }
-.fc .fc-button-primary:disabled { /* not DRY */
+.fc .fc-button-primary:disabled { 
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #2C3E50;
     background-color: var(--fc-button-bg-color, #2C3E50);
     border-color: #2C3E50;
-    border-color: var(--fc-button-border-color, #2C3E50); /* overrides :hover */
+    border-color: var(--fc-button-border-color, #2C3E50); 
   }
 .fc .fc-button-primary:focus {
     box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
@@ -244,12 +220,11 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc {
 
-  /* icons within buttons */
 
 }
 .fc .fc-button .fc-icon {
     vertical-align: middle;
-    font-size: 1.5em; /* bump up the size (but don't make it bigger than line-height of button, which is 1.5em also) */
+    font-size: 1.5em;
   }
 .fc .fc-button-group {
     position: relative;
@@ -302,18 +277,17 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     margin: 0;
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
-    margin-left: .75em; /* space between */
+    margin-left: .75em;
   }
 .fc-direction-rtl .fc-toolbar > * > :not(:first-child) {
-    margin-right: .75em; /* space between */
+    margin-right: .75em; 
   }
-.fc-direction-rtl .fc-toolbar-ltr { /* when the toolbar-chunk positioning system is explicitly left-to-right */
+.fc-direction-rtl .fc-toolbar-ltr { 
     flex-direction: row-reverse;
   }
 .fc .fc-scroller {
     -webkit-overflow-scrolling: touch;
-    position: relative; /* for abs-positioned elements within */
-  }
+    position: relative; }
 .fc .fc-scroller-liquid {
     height: 100%;
   }
@@ -328,25 +302,23 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     position: relative;
     overflow: hidden;
     direction: ltr;
-      /* hack for chrome computing the scroller's right/left wrong for rtl. undone below... */
-      /* TODO: demonstrate in codepen */
   }
 .fc .fc-scroller-harness-liquid {
     height: 100%;
   }
-.fc-direction-rtl .fc-scroller-harness > .fc-scroller { /* undo above hack */
+.fc-direction-rtl .fc-scroller-harness > .fc-scroller {
     direction: rtl;
   }
 .fc-theme-standard .fc-scrollgrid {
     border: 1px solid #ddd;
-    border: 1px solid var(--fc-border-color, #ddd); /* bootstrap does this. match */
+    border: 1px solid var(--fc-border-color, #ddd); 
   }
 .fc .fc-scrollgrid,
-    .fc .fc-scrollgrid table { /* all tables (self included) */
-      width: 100%; /* because tables don't normally do this */
+    .fc .fc-scrollgrid table { 
+      width: 100%; 
       table-layout: fixed;
     }
-.fc .fc-scrollgrid table { /* inner tables */
+.fc .fc-scrollgrid table { 
       border-top-style: hidden;
       border-left-style: hidden;
       border-right-style: hidden;
@@ -361,24 +333,22 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-scrollgrid-liquid {
     height: 100%;
   }
-.fc .fc-scrollgrid-section { /* a <tr> */
-    height: 1px /* better than 0, for firefox */
+.fc .fc-scrollgrid-section { 
+    height: 1px 
 
   }
 .fc .fc-scrollgrid-section > td {
-      height: 1px; /* needs a height so inner div within grow. better than 0, for firefox */
+      height: 1px; 
     }
 .fc .fc-scrollgrid-section table {
       height: 1px;
-        /* for most browsers, if a height isn't set on the table, can't do liquid-height within cells */
-        /* serves as a min-height. harmless */
     }
 .fc .fc-scrollgrid-section-liquid {
     height: auto
 
   }
 .fc .fc-scrollgrid-section-liquid > td {
-      height: 100%; /* better than `auto`, for firefox */
+      height: 100%;
     }
 .fc .fc-scrollgrid-section > * {
     border-top-width: 0;
@@ -390,11 +360,9 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc .fc-scrollgrid-section-body table,
   .fc .fc-scrollgrid-section-footer table {
-    border-bottom-style: hidden; /* head keeps its bottom border tho */
+    border-bottom-style: hidden; 
   }
 .fc {
-
-  /* stickiness */
 
 }
 .fc .fc-scrollgrid-section-sticky > * {
@@ -402,31 +370,29 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background: var(--fc-page-bg-color, #fff);
     position: -webkit-sticky;
     position: sticky;
-    z-index: 2; /* TODO: var */
-    /* TODO: box-shadow when sticking */
+    z-index: 2;
+
   }
 .fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky > * {
-    top: 0; /* because border-sharing causes a gap at the top */
-      /* TODO: give safari -1. has bug */
+    top: 0; 
+
   }
 .fc .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky > * {
-    bottom: 0; /* known bug: bottom-stickiness doesn't work in safari */
+    bottom: 0; 
   }
-.fc .fc-scrollgrid-sticky-shim { /* for horizontal scrollbar */
-    height: 1px; /* needs height to create scrollbars */
+.fc .fc-scrollgrid-sticky-shim { 
+    height: 1px; 
     margin-bottom: -1px;
   }
-.fc-sticky { /* no .fc wrap because used as child of body */
+.fc-sticky { 
   position: -webkit-sticky;
   position: sticky;
 }
 .fc .fc-view-harness {
-    flex-grow: 1; /* because this harness is WITHIN the .fc's flexbox */
+    flex-grow: 1; 
     position: relative;
   }
 .fc {
-
-  /* when the harness controls the height, make the view liquid */
 
 }
 .fc .fc-view-harness-active > .fc-view {
@@ -437,13 +403,12 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     left: 0;
   }
 .fc .fc-col-header-cell-cushion {
-    display: inline-block; /* x-browser for when sticky (when multi-tier header) */
+    display: inline-block; 
     padding: 2px 4px;
   }
 .fc .fc-bg-event,
   .fc .fc-non-business,
   .fc .fc-highlight {
-    /* will always have a harness with position:relative/absolute, so absolutely expand */
     position: absolute;
     top: 0;
     left: 0;
@@ -475,43 +440,35 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background: rgba(208, 208, 208, 0.3);
     background: var(--fc-neutral-bg-color, rgba(208, 208, 208, 0.3));
   }
-/* link resets */
-/* ---------------------------------------------------------------------------------------------------- */
+
 a.fc-event,
 a.fc-event:hover {
   text-decoration: none;
 }
-/* cursor */
 .fc-event[href],
 .fc-event.fc-event-draggable {
   cursor: pointer;
 }
-/* event text content */
-/* ---------------------------------------------------------------------------------------------------- */
+
 .fc-event .fc-event-main {
     position: relative;
     z-index: 2;
   }
-/* dragging */
-/* ---------------------------------------------------------------------------------------------------- */
-.fc-event-dragging:not(.fc-event-selected) { /* MOUSE */
+
+.fc-event-dragging:not(.fc-event-selected) { 
     opacity: 0.75;
   }
-.fc-event-dragging.fc-event-selected { /* TOUCH */
+.fc-event-dragging.fc-event-selected { 
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
   }
-/* resizing */
-/* ---------------------------------------------------------------------------------------------------- */
-/* (subclasses should hone positioning for touch and non-touch) */
+
 .fc-event .fc-event-resizer {
     display: none;
     position: absolute;
     z-index: 4;
   }
-.fc-event:hover, /* MOUSE */
-.fc-event-selected { /* TOUCH */
-
-}
+.fc-event:hover, 
+.fc-event-selected, 
 .fc-event:hover .fc-event-resizer, .fc-event-selected .fc-event-resizer {
     display: block;
   }

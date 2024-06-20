@@ -1,10 +1,9 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Blog Author {% endblock %} 
+{% block title %} Doação Monetária {% endblock %} 
 
-{% block body_class %} blog-author {% endblock %}
+{% block body_class %} doacao-monetaria {% endblock %}
 
-<!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
@@ -12,7 +11,6 @@
   {% include 'includes/navigation-transparent.html' %} 
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
-    <!-- START Testimonials w/ user image & text & info -->
     <section class="py-sm-7 py-5 position-relative">
       <div class="container">
         <div class="row">
@@ -25,24 +23,20 @@
                 <div class="d-flex justify-content-center align-items-center mb-2">
                   <h3 class="mb-0 text-center" style="font-size: 4rem;">Você também pode ajudar!!</h3>
                 </div>
-        
                 <p class="text-center mb-0 text-2xl">
                   Em um gesto simples, você pode mudar o destino de quem enfrenta dificuldades. Sua doação oferece esperança, conforto e oportunidades reais. Junte-se a nós para construir um mundo mais solidário e acolhedor. Faça sua parte hoje e faça a diferença na vida de quem mais precisa.
                 </p>
-                
               </div>
             </div>
           </div>
         </div>
-              </div>
+      </div>
     </section>
-    <!-- END Testimonials w/ user image & text & info -->
-    <!-- START Blogs w/ 4 cards w/ image & text & link -->
     <section class="py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h3 class="mb-5">Maislgumas organizações</h3>
+            <h3 class="mb-5">Mais algumas organizações</h3>
           </div>
         </div>
         <div class="row">
@@ -55,7 +49,7 @@
               </div>
               <div class="card-body px-0">
                 <h5>
-                  <a href="javascript:;" class="text-dark font-weight-bold">Médicos sem Fronteiras</a>
+                  <div class="text-dark font-weight-bold">Médicos sem Fronteiras
                 </h5>
                 <p>
                   Médicos sem Fronteiras é uma organização internacional, não governamental e sem fins lucrativos que oferece ajuda médica e humanitária a populações em situações de emergência, em casos como conflitos armados, catástrofes, epidemias, fome e exclusão social.
@@ -75,7 +69,7 @@
               </div>
               <div class="card-body px-0">
                 <h5>
-                  <a href="javascript:;" class="text-dark font-weight-bold">CARE International</a>
+                  <div class="text-dark font-weight-bold">CARE International
                 </h5>
                 <p>
                   A CARE é uma agência humanitária internacional que oferece ajuda emergencial e projetos de desenvolvimento internacional. Fundada em 1945, a CARE é uma organização não sectária, imparcial e não governamental. É uma das maiores e mais antigas organizações de ajuda humanitária focada no combate à pobreza global.
@@ -95,120 +89,21 @@
               </div>
               <div class="card-body px-0">
                 <h5>
-                  <a href="javascript:;" class="text-dark font-weight-bold">Oxfam</a>
+                 <div class="text-dark font-weight-bold">Oxfam
                 </h5>
                 <p>
                   A Oxfam International é uma confederação de 19 organizações e mais de 3000 parceiros, que atua em mais de 90 países na busca de soluções para o problema da pobreza, desigualdade e da injustiça, por meio de campanhas, programas de desenvolvimento e ações emergenciais.
                 </p>
-                <a href="javascript:;" target=”_blank” class="text-info text-sm icon-move-right">Saiba Mais
+                <a href="https://www.oxfam.org.br/" target=”_blank” class="text-info text-sm icon-move-right">Saiba Mais
                   <i class="fas fa-arrow-right text-xs ms-1"></i>
                 </a>
               </div>
             </div>
           </div>
-       
         </div>
       </div>
     </section>
-    <!-- END Blogs w/ 4 cards w/ image & text & link -->
   </div>
-<!--   
-  <section class="py-lg-5">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="card box-shadow-xl overflow-hidden mb-5">
-            <div class="row">
-              <div class="col-lg-5 position-relative bg-cover px-0" style="background-image: url('/static/assets/img/examples/blog2.jpg')" loading="lazy">
-                <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
-                  <div class="mask bg-gradient-dark opacity-8"></div>
-                  <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
-                    <h3 class="text-white">Contact Information</h3>
-                    <p class="text-white opacity-8 mb-4">Fill up the form and our Team will get back to you within 24 hours.</p>
-                    <div class="d-flex p-2 text-white">
-                      <div>
-                        <i class="fas fa-phone text-sm"></i>
-                      </div>
-                      <div class="ps-3">
-                        <span class="text-sm opacity-8">(+40) 772 100 200</span>
-                      </div>
-                    </div>
-                    <div class="d-flex p-2 text-white">
-                      <div>
-                        <i class="fas fa-envelope text-sm"></i>
-                      </div>
-                      <div class="ps-3">
-                        <span class="text-sm opacity-8">hello@creative-tim.com</span>
-                      </div>
-                    </div>
-                    <div class="d-flex p-2 text-white">
-                      <div>
-                        <i class="fas fa-map-marker-alt text-sm"></i>
-                      </div>
-                      <div class="ps-3">
-                        <span class="text-sm opacity-8">Dyonisie Wolf Bucharest, RO 010458</span>
-                      </div>
-                    </div>
-                    <div class="mt-4">
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook">
-                        <i class="fab fa-facebook"></i>
-                      </button>
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Twitter">
-                        <i class="fab fa-twitter"></i>
-                      </button>
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Dribbble">
-                        <i class="fab fa-dribbble"></i>
-                      </button>
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Instagram">
-                        <i class="fab fa-instagram"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-7">
-                <form class="p-3" id="contact-form" method="post">
-                  <div class="card-header px-4 py-sm-5 py-3">
-                    <h2>Say Hi!</h2>
-                    <p class="lead"> We'd like to talk with you.</p>
-                  </div>
-                  <div class="card-body pt-1">
-                    <div class="row">
-                      <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                          <label>My name is</label>
-                          <input type="text" class="form-control" placeholder="Full Name">
-                        </div>
-                      </div>
-                      <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                          <label>I'm looking for</label>
-                          <input type="text" class="form-control" placeholder="What you love">
-                        </div>
-                      </div>
-                      <div class="col-md-12 pe-2 mb-3">
-                        <div class="input-group input-group-static mb-4">
-                          <label>Your message</label>
-                          <textarea name="message" class="form-control" id="message" rows="6" placeholder="I want to say that..."></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 text-end ms-auto">
-                        <button type="submit" class="btn bg-gradient-info mb-0">Send Message</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
 {% endblock content %}
 
-<!-- Specific Page JS goes HERE  -->
 {% block javascripts %}{% endblock javascripts %}

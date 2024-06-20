@@ -1,36 +1,33 @@
 
-// initialization of Popovers
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 })
 
-// initialization of Tooltips
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-// helper for adding on all elements multiple attributes
+
 function setAttributes(el, options) {
   Object.keys(options).forEach(function(attr) {
     el.setAttribute(attr, options[attr]);
   })
 }
 
-// activate popovers
+
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
   return new bootstrap.Popover(popoverTriggerEl)
 })
 
-// activate tooltips
+
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-// Tabs navigation
 
 var total = document.querySelectorAll('.nav-pills');
 
@@ -53,9 +50,9 @@ total.forEach(function(item, i) {
 
   item.onmouseover = function(event) {
     let target = getEventTarget(event);
-    let li = target.closest('li'); // get reference
+    let li = target.closest('li'); 
     if (li) {
-      let nodes = Array.from(li.closest('ul').children); // get array
+      let nodes = Array.from(li.closest('ul').children); 
       let index = nodes.indexOf(li) + 1;
       item.querySelector('li:nth-child(' + index + ') .nav-link').onclick = function() {
         moving_div = item.querySelector('.moving-tab');
@@ -78,9 +75,6 @@ total.forEach(function(item, i) {
   }
 });
 
-
-// Tabs navigation resize
-
 window.addEventListener('resize', function(event) {
   total.forEach(function(item, i) {
     item.querySelector('.moving-tab').remove();
@@ -99,7 +93,7 @@ window.addEventListener('resize', function(event) {
     let li = item.querySelector(".nav-link.active").parentElement;
 
     if (li) {
-      let nodes = Array.from(li.closest('ul').children); // get array
+      let nodes = Array.from(li.closest('ul').children);
       let index = nodes.indexOf(li) + 1;
 
       let sum = 0;
@@ -142,9 +136,6 @@ function getEventTarget(e) {
   return e.target || e.srcElement;
 }
 
-// End tabs navigation
-
-// Copy code function
 
 function copyCode(el) {
   const selection = window.getSelection();
@@ -177,11 +168,8 @@ function copyCode(el) {
   }
 }
 
-// End copy code function
-
 
 window.onload = function() {
-  // Material Design Input function
   var inputs = document.querySelectorAll('input');
 
   for (var i = 0; i < inputs.length; i++) {
@@ -205,7 +193,6 @@ window.onload = function() {
     }, false);
   }
 
-  // Ripple Effect
   var ripples = document.querySelectorAll('.btn');
 
   for (var i = 0; i < ripples.length; i++) {
@@ -228,10 +215,6 @@ window.onload = function() {
   }
 };
 
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
 
 function debounce(func, wait, immediate) {
   var timeout;

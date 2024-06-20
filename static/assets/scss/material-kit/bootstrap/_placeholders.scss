@@ -11,8 +11,6 @@
     content: "";
   }
 }
-
-// Sizing
 .placeholder-xs {
   min-height: .6em;
 }
@@ -25,7 +23,6 @@
   min-height: 1.2em;
 }
 
-// Animation
 .placeholder-glow {
   .placeholder {
     animation: placeholder-glow 2s ease-in-out infinite;
